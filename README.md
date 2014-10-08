@@ -1,4 +1,5 @@
-PLUG+ PlugDJ Script
+<b>PLUG+ PlugDJ Script</b>
+
 Licensing
 
 Christian BUISSON French Developper contact by electronic mail: hybris_95@hotmail.com
