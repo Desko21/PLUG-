@@ -23,17 +23,20 @@ How to use
 
 Copy/paste the script into the Console of your WebBrowser (while Plug.dj window is on focus and channel is already joined)
 
-
-Or for firefox users make a new bookmark with the following code :
+FIREFOX
+==
+For firefox users make a new bookmark with the following code :
 
 javascript:(function(){$.getScript('https://raw.githubusercontent.com/Desko21/PLUG-/master/PLUG+.js');}());
-==
 
-Or for chrome users make a new bookmark with the following code :
+CHROME
+==
+For chrome users make a new bookmark with the following code :
 
 javascript:(function(){$.getScript('https://rawgit.com/Desko21/PLUG-/master/PLUG+.js');}());
-==
+
 Firefox issues
+==
 
 Firefox blocks mixed-content by default.
 
