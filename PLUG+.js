@@ -188,7 +188,7 @@ function startAutoWoot(){
 }
 function stopAutoWoot(){
     autoW = false;
-    $("#hybrisAutoWoot").css("background-color", "#f3eb06");
+    $("#hybrisAutoWoot").css("background-color", "#0A0A0A");
     refreshAPIStatus();
 }
 function switchAutoWoot(){
@@ -206,7 +206,7 @@ function startAutoNotice(){
 }
 function stopAutoNotice(){
     autoNotice = false;
-	$("#hybrisMention").css("background-color", "#f3eb06");
+	$("#hybrisMention").css("background-color", "#0A0A0A");
     refreshAPIStatus();
 }
 function switchAutoNotice(){
@@ -224,7 +224,7 @@ function startAutoNoticeJoinersLeavers(){
 }
 function stopAutoNoticeJoinersLeavers(){
     autoJoinLeaveNotice = false;
-    $("#hybrisJoiners").css("background-color", "#f3eb06");
+    $("#hybrisJoiners").css("background-color", "#0A0A0A");
     refreshAPIStatus();
 }
 function switchAutoNoticeJoinersLeavers(){
