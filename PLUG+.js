@@ -21,10 +21,10 @@ Copyright © 2014 Christian BUISSON
 /** USAGE :
 Firefox:
 Add the following line as a bookmark :
-javascript:(function(){$.getScript('https://raw.githubusercontent.com/Hybris95/HybrisPlugDJ/master/hybrisPlugDJ.js');}());
+javascript:(function(){$.getScript('https://raw.githubusercontent.com/Desko21/PLUG-/master/PLUG+.js');}());
 Chrome:
 Add the following line as a bookmark :
-javascript:(function(){$.getScript('https://rawgit.com/Hybris95/HybrisPlugDJ/master/hybrisPlugDJ.js');}());
+javascript:(function(){$.getScript('https://rawgit.com/Desko21/PLUG-/master/PLUG+.js');}());
  ** Usage Method :
  ** copy/paste the entire script into the Firefox/Chrome Console (Ctrl+Shift+C Shortcut)
  ** For Firefox users (if you want notice sound) :
