@@ -1,9 +1,9 @@
-<b>PLUG+ PlugDJ Script</b>
-
+PLUG+ PlugDJ Script
+=====
 Licensing
 
-Christian BUISSON French Developper contact by electronic mail: hybris_95@hotmail.com
-Modify by Desko on Oct 2014.
+Christian BUISSON French Developper contact by electronic mail: hybris_95@hotmail.com<br>
+Modify by Desko on Oct 2014.<br>
 Copyright © 2014 Christian BUISSON
 
 This program is free software; you can redistribute it and/or modify
@@ -21,18 +21,18 @@ along with this program; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 How to use
 
-Copy/paste the script into the Console of your WebBrowser
+Copy/paste the script into the Console of your WebBrowser (while Plug.dj window is on focus and channel is already joined)
 
-(while Plug.dj window is on focus and channel is already joined)
 
 Or for firefox users make a new bookmark with the following code :
 
-javascript:(function(){$.getScript('https://raw.githubusercontent.com/Hybris95/HybrisPlugDJ/master/hybrisPlugDJ.js');}());
+javascript:(function(){$.getScript('https://raw.githubusercontent.com/Desko21/PLUG-/master/PLUG+.js');}());
+==
 
 Or for chrome users make a new bookmark with the following code :
 
 javascript:(function(){$.getScript('https://rawgit.com/Desko21/PLUG-/master/PLUG+.js');}());
-
+==
 Firefox issues
 
 Firefox blocks mixed-content by default.
@@ -44,9 +44,7 @@ Then search for "security.mixed_content.block_active_content".
 And set it to false (by double clicking on it).
 
 Warning
-
+=
 Use autoAnswer and autoRaffle at your own risks, these issues should be fixed soon by Matthew and were developped for tests purposes.
 
-TODO
 
-Create a tag in the webpage for the audio instead of using mixed_content in javascript.
