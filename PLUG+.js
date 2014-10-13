@@ -1,3 +1,4 @@
+ 
 /** GNU GPLv3 Licensing :
 Christian BUISSON French Developer contact by electronic mail: hybris_95@hotmail.com
 Modify by Desko on Oct 2014.
@@ -49,6 +50,8 @@ var changedAutoNotice;
 var autoNotice;
 var changedAutoJoinLeaveNotice;
 var autoJoinLeaveNotice;
+var changedAutoM;
+var autoM;
 
 /**
  * STATS
@@ -99,6 +102,19 @@ if(!autowoot){
     autowoot = function() {
         if(autoW){
             $("#woot").click();
+        }
+    };
+}
+
+/**
+ * ADVANCE EVENT :
+ * AutoWoot Only -> http://pastebin.com/qNV6T6pq
+ */
+var automeh;
+if(!automeh){
+    automeh = function() {
+        if(autoM){
+            $("#meh").click();
         }
     };
 }
@@ -165,6 +181,11 @@ function refreshAPIStatus()
         API.on(API.ADVANCE, autowoot);
     }
 	
+	API.off(API.ADVANCE, automeh);
+    if(autoM){
+        API.on(API.ADVANCE, automeh);
+    }
+	
     API.off(API.CHAT, analyseChat);
     if(autoNotice){
         API.on(API.CHAT, analyseChat);
@@ -191,12 +212,33 @@ function stopAutoWoot(){
     $("#hybrisAutoWoot").css("background-color", "#0A0A0A");
     refreshAPIStatus();
 }
+
+function startAutoMeh(){
+    autoM = true;
+    $("#hybrisAutoWoot").css("background-color", "#105D2F");
+    automeh();
+    refreshAPIStatus();
+}
+function stopAutoMeh(){
+    autoM = false;
+    $("#hybrisAutoWoot").css("background-color", "#0A0A0A");
+    refreshAPIStatus();
+}
 function switchAutoWoot(){
     changedAutoW = true;
     if(autoW){
         stopAutoWoot();
     }else{
         startAutoWoot();
+    }
+}
+
+function switchAutoMeh(){
+    changedAutoM = true;
+    if(autoM){
+        stopAutoMeh();
+    }else{
+        startAutoMeh();
     }
 }
 function startAutoNotice(){
@@ -293,6 +335,15 @@ function showAutoWootToolTip(){
     $("#tooltip").css("left", tooltipLeftPos + "px");
     $("#tooltip").css("top", tooltipTopPos + "px");
 }
+
+function showAutoMehToolTip(){
+    hideToolTip();
+    var tooltipLeftPos = getTooltipLeftPos(0);
+    var tooltipTopPos = getTooltipTopPos();
+    $("body").append("<div id=\"tooltip\"><span>AutoMeh this shit!</span><div class=\"corner\"></div></div>");
+    $("#tooltip").css("left", tooltipLeftPos + "px");
+    $("#tooltip").css("top", tooltipTopPos + "px");
+}
 function showAutoNoticeToolTip(){
     hideToolTip();
     var tooltipLeftPos = getTooltipLeftPos(1);
@@ -326,6 +377,19 @@ function setupAutoWootBtn(){
     $("#hybrisAutoWoot").bind('click.hybris', switchAutoWoot);
 	$("#hybrisAutoWoot").unbind('mouseenter.hybris');
 	$("#hybrisAutoWoot").bind('mouseenter.hybris', showAutoWootToolTip);
+	$("#hybrisAutoWoot").unbind('mouseleave.hybris');
+	$("#hybrisAutoWoot").bind('mouseleave.hybris', hideToolTip);
+}
+
+function setupAutoMehBtn(){
+    if($("#hybrisAutoWoot").length == 0){
+        $("#hybrisHeader").append("<div id=\"hybrisAutoWoot\" class=\"chat-header-button\"><i class=\"icon icon-hybris-autowoot\"></i></div>");
+    }
+    $(".icon-hybris-autowoot").css("background-position", "-305px -280px");
+    $("#hybrisAutoWoot").unbind('click.hybris');
+    $("#hybrisAutoWoot").bind('click.hybris', switchAutoMeh);
+	$("#hybrisAutoWoot").unbind('mouseenter.hybris');
+	$("#hybrisAutoWoot").bind('mouseenter.hybris', showAutoMehToolTip);
 	$("#hybrisAutoWoot").unbind('mouseleave.hybris');
 	$("#hybrisAutoWoot").bind('mouseleave.hybris', hideToolTip);
 }
@@ -401,6 +465,7 @@ function setupHybrisToolBar(){
     $("#hybrisHeader").css("left", hybrisHeaderLeftPos + "px");
     $("#hybrisHeader").css("width", "100%");
 	setupAutoWootBtn();
+	setupAutoMehBtn();
 	setupAutoNoticeBtn();
 	setupAutoJoinersLeaversBtn();
 	setupEtaBtn();
@@ -420,6 +485,16 @@ function main(){
         }
     }else{
         stopAutoWoot();
+    }
+	
+	if(changedAutoM){
+        if(autoM){
+            startAutoMeh();
+        }else{
+            stopAutoMeh();
+        }
+    }else{
+        stopAutoMeh();
     }
     
     if(changedAutoNotice){
@@ -443,3 +518,5 @@ function main(){
     }
 }
 $(document).ready(main);
+Status API Training Shop Blog About
+© 2014 GitHub, Inc. Terms Privacy Security Contact
